@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 3146,
   "graphTooltip": 1,
-  "iteration": 1539455015295,
+  "iteration": 1539695136095,
   "links": [],
   "panels": [
     {
@@ -63,7 +63,6 @@
       "targets": [
         {
           "expr": "sum by(container_name) (container_memory_usage_bytes{pod_name=\"$pod\", container_name=~\"$container\", container_name!=\"POD\"})",
-          "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
           "legendFormat": "Current: {{ container_name }}",
@@ -73,7 +72,6 @@
         },
         {
           "expr": "kube_pod_container_resource_requests_memory_bytes{pod=\"$pod\", container=~\"$container\"}",
-          "format": "time_series",
           "interval": "10s",
           "intervalFactor": 2,
           "legendFormat": "Requested: {{ container }}",
@@ -308,7 +306,6 @@
       }
     }
   ],
-  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
@@ -319,9 +316,8 @@
       {
         "allValue": ".*",
         "current": {
-          "tags": [],
-          "text": "default",
-          "value": "default"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "Prometheus",
         "hide": 0,
@@ -344,8 +340,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "d-iambot-slack-647bb8dbdf-2zb5w",
-          "value": "d-iambot-slack-647bb8dbdf-2zb5w"
+          "text": "calico-node-22x4z",
+          "value": "calico-node-22x4z"
         },
         "datasource": "Prometheus",
         "hide": 0,
@@ -392,8 +388,8 @@
     ]
   },
   "time": {
-    "from": "2018-10-13T18:11:11.062Z",
-    "to": "2018-10-13T18:24:30.493Z"
+    "from": "now-6h",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -422,6 +418,6 @@
   },
   "timezone": "browser",
   "title": "Kubernetes Pods",
-  "uid": "4Z7Ai_1ik",
+  "uid": "wSCaq91iz",
   "version": 1
 }
